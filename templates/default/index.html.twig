@@ -11,6 +11,14 @@
 <div class="example-wrapper">
     <h1>Hello {{ controller_name }}! ✅</h1>
 
+    <h2>Użytkownicy</h2>
+
+    <ul>
+    {% for user in users %}
+        <li>{{user.name}} - prezent: {{random_gift[loop.index0 % random_gift|length]}}</li>
+    {% endfor %}
+    </ul>
+
     This friendly message is coming from:
     <ul>
         <li>Your controller at <code><a href="{{ '/srv/app/src/Controller/DefaultController.php'|file_link(0) }}">src/Controller/DefaultController.php</a></code></li>
